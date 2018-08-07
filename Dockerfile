@@ -81,7 +81,7 @@ WORKDIR /srv
 COPY odp-gitstats.sh /srv/bamboo-task-scripts/odp-gitstats.sh
 COPY odp-documentation.sh /srv/bamboo-task-scripts/odp-documentation.sh
 COPY odp-diff-abi-api-publish.sh /srv/bamboo-task-scripts/odp-diff-abi-api-publish.sh
-COPY rebuild-gitstats.sh /srv/bamboo-task-scripts/rebuild-gitstatus.sh
+COPY rebuild-gitstats.sh /srv/bamboo-task-scripts/rebuild-gitstats.sh
 COPY rebuild-documentation.sh /srv/bamboo-task-scripts/rebuild-documentation.sh
 COPY rebuild-diffs.sh /srv/bamboo-task-scripts/rebuild-diffs.sh
 COPY changelog-asciidoc.md /srv/bamboo-task-scripts/changelog-asciidoc.md

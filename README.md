@@ -7,9 +7,25 @@ Build the container in the usual way, e.g.
 
 `docker build --rm -t "linaroits/odpdocsbuild:latest" .`
 
-## Gitstats
+A number of scripts are stored in the container to simplify the rebuilding of the ODP documentation. For each command, a folder on the host needs to be passed in order to (a) provide a place on the host for the built documentation to be stored and (b) to provide a stateful location for repositories to be stored.
+
+## Rebuilding gitstats pages
 The gitstats pages are rebuilt with:
 
-`docker run --rm -it -v <workspace>:/srv/odp-workspace linaroits/odpdocsbuild bash /srv/bamboo-task-scripts/build-gitstats.sh`
+`docker run --rm -it -v <workspace>:/srv/odp-workspace linaroits/odpdocsbuild bash /srv/bamboo-task-scripts/rebuild-gitstats.sh`
+
+where `workspace` is the path to a folder on the host used as a scratch space for repos and output.
+
+## Rebuilding documentation pages
+The documentation pages are rebuilt with:
+
+`docker run --rm -it -v <workspace>:/srv/odp-workspace linaroits/odpdocsbuild bash /srv/bamboo-task-scripts/rebuild-documentation.sh`
+
+where `workspace` is the path to a folder on the host used as a scratch space for repos and output.
+
+## Rebuilding API diff pages
+The API diff pages are rebuilt with:
+
+`docker run --rm -it -v <workspace>:/srv/odp-workspace linaroits/odpdocsbuild bash /srv/bamboo-task-scripts/rebuild-diffs.sh`
 
 where `workspace` is the path to a folder on the host used as a scratch space for repos and output.
