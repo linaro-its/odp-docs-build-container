@@ -30,7 +30,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 # Install latest software
 # Change the date time stamp if you want to rebuild the image from this point down
 # Useful for Dockerfile development
-ENV SOFTWARE_UPDATED 2018-08-07.1422
+ENV SOFTWARE_UPDATED 2018-08-07.1521
 
 # Install packages
 # Add update && upgrade to this layer in case we're rebuilding from here down
@@ -73,7 +73,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 ################################################################################
 # Dockerfile development only
-ENV CONFIG_UPDATED 2018-08-07.1422
+ENV CONFIG_UPDATED 2018-08-07.1521
 ################################################################################
 
 WORKDIR /srv
@@ -85,6 +85,7 @@ COPY rebuild-gitstats.sh /srv/bamboo-task-scripts/rebuild-gitstats.sh
 COPY rebuild-documentation.sh /srv/bamboo-task-scripts/rebuild-documentation.sh
 COPY rebuild-diffs.sh /srv/bamboo-task-scripts/rebuild-diffs.sh
 COPY changelog-asciidoc.md /srv/bamboo-task-scripts/changelog-asciidoc.md
+RUN chmod a+x /srv/bamboo-task-scripts/*.sh
 
 RUN git clone https://github.com/ohdarling/gitstats.git /srv/gitstats
 
