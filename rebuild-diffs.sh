@@ -1,0 +1,3 @@
+#!/bin/bash
+# but we do for generic ...
+platform_type=generic /srv/bamboo-task-scripts/odp-diff-abi-api-publish.sh
