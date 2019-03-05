@@ -1,4 +1,9 @@
 # odp-docs-build-container
+
+## PLEASE NOTE!
+The ODP web site is no longer built or maintained by Linaro, so this repo is being archived.
+
+## Introduction
 A Docker container used by Linaro's web-site build process.
 
 The container isolates the building of the ODP documentation for the ODP site. This avoids needing to install directly on the host the numerous packages used when building the documentation. It also makes it more self-documenting in terms of the packages needed to build the documentation.
